@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="440.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/13" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.ubp.edu.doo.tpdooaguasvital2026.controladores.PedidosController">
+   <children>
+      <TableView fx:id="tableView" layoutX="12.0" layoutY="58.0" onMouseClicked="#obtenerPedidoSeleccionado" prefHeight="250.0" prefWidth="725.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="Nro" />
+          <TableColumn prefWidth="130.0" text="Fecha" />
+            <TableColumn prefWidth="300.0" text="Cliente" />
+            <TableColumn prefWidth="200.0" text="Estado" />
+        </columns>
+      </TableView>
+      <ProgressBar fx:id="progress" layoutX="14.0" layoutY="405.0" prefHeight="20.0" prefWidth="91.0" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="14.0" />
+      <Button fx:id="btnCerrar" layoutX="660.0" layoutY="400.0" mnemonicParsing="false" onAction="#cerrarVentana" text="Cerrar" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="15.0" />
+      <Button fx:id="btnEliminar" layoutX="580.0" layoutY="400.0" mnemonicParsing="false" onAction="#eliminarPedido" text="Eliminar" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="98.0" />
+      <Button fx:id="btnRendir" layoutX="490.0" layoutY="400.0" mnemonicParsing="false" onAction="#rendirPedido" text="Rendir" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="190.0" />
+      <Button fx:id="btnModificar" layoutX="395.0" layoutY="400.0" mnemonicParsing="false" onAction="#modificarPedido" text="Modificar" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="285.0" />
+      <Button fx:id="btnNuevo" layoutX="320.0" layoutY="400.0" mnemonicParsing="false" onAction="#nuevoPedido" text="Nuevo" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="365.0" />
+      <TextField fx:id="txtBuscar" layoutX="12.0" layoutY="14.0" prefWidth="90.0" promptText="Nro..." AnchorPane.leftAnchor="12.0" AnchorPane.topAnchor="14.0" />
+      <TextField fx:id="txtBuscarCliente" layoutX="110.0" layoutY="14.0" prefWidth="150.0" promptText="Cliente..." AnchorPane.leftAnchor="110.0" AnchorPane.topAnchor="14.0" />
+      <ComboBox fx:id="cmbEstado" layoutX="270.0" layoutY="10.0" prefHeight="28.0" prefWidth="100.0" promptText="Estado" />
+      <Button fx:id="btnBuscar" layoutX="380.0" layoutY="14.0" mnemonicParsing="false" onAction="#buscarPedidos" text="Buscar" />
+      <Button fx:id="btnLimpiar" layoutX="450.0" layoutY="14.0" mnemonicParsing="false" onAction="#limpiarBusqueda" text="X" textFill="RED" />
+   </children>
+</AnchorPane>

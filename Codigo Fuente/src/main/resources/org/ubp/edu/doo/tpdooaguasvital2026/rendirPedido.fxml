@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="650.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/13" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.ubp.edu.doo.tpdooaguasvital2026.controladores.RendirPedidoController">
+   <children>
+      <Label layoutX="15.0" layoutY="12.0" text="REGISTRAR RENDICION DE PEDIDO" style="-fx-font-size: 16; -fx-font-weight: bold;" />
+
+      <Label layoutX="20.0" layoutY="55.0" text="Pedido Nro:" />
+      <TextField fx:id="txtBuscarPedido" layoutX="100.0" layoutY="50.0" prefWidth="80.0" />
+      <Button fx:id="btnBuscar" layoutX="190.0" layoutY="50.0" mnemonicParsing="false" onAction="#buscarPedido" text="Buscar" />
+
+      <Label layoutX="280.0" layoutY="55.0" text="Administrativo:" />
+      <ComboBox fx:id="cmbAdministrativo" layoutX="390.0" layoutY="50.0" prefHeight="28.0" prefWidth="270.0" />
+
+      <Separator layoutX="15.0" layoutY="95.0" prefWidth="650.0" />
+
+      <Label layoutX="20.0" layoutY="110.0" text="Pedido Nro:" />
+      <TextField fx:id="txtNro" editable="false" layoutX="100.0" layoutY="106.0" prefWidth="60.0" />
+
+      <Label layoutX="180.0" layoutY="110.0" text="Cliente:" />
+      <TextField fx:id="txtCliente" editable="false" layoutX="240.0" layoutY="106.0" prefWidth="420.0" />
+
+      <Label layoutX="20.0" layoutY="145.0" text="Factura Nro:" />
+      <TextField fx:id="txtFactura" editable="false" layoutX="100.0" layoutY="140.0" prefWidth="80.0" />
+
+      <Label layoutX="200.0" layoutY="145.0" text="Total: $" />
+      <TextField fx:id="txtTotal" editable="false" layoutX="250.0" layoutY="140.0" prefWidth="100.0" />
+
+      <Label layoutX="380.0" layoutY="145.0" text="Estado:" />
+      <TextField fx:id="txtEstado" editable="false" layoutX="430.0" layoutY="140.0" prefWidth="230.0" />
+
+      <Separator layoutX="15.0" layoutY="180.0" prefWidth="650.0" />
+
+      <TableView fx:id="tableView" layoutX="14.0" layoutY="190.0" prefHeight="120.0" prefWidth="650.0">
+        <columns>
+          <TableColumn prefWidth="250.0" text="Producto" />
+          <TableColumn prefWidth="100.0" text="Cantidad" />
+          <TableColumn prefWidth="120.0" text="Precio Unit." />
+          <TableColumn prefWidth="150.0" text="Subtotal" />
+        </columns>
+      </TableView>
+
+      <Separator layoutX="15.0" layoutY="320.0" prefWidth="650.0" />
+
+      <CheckBox fx:id="chkEntregado" layoutX="20.0" layoutY="335.0" mnemonicParsing="false" onAction="#toggleEntregado" text="Pedido Entregado" />
+
+      <Label layoutX="20.0" layoutY="370.0" text="Fecha y hora entrega:" />
+      <DatePicker fx:id="txtFechaEntrega" layoutX="170.0" layoutY="365.0" prefWidth="140.0" />
+      <TextField fx:id="txtHoraEntrega" layoutX="320.0" layoutY="365.0" prefWidth="70.0" promptText="HH:mm" />
+
+      <Label layoutX="420.0" layoutY="370.0" text="Forma de pago:" />
+      <ComboBox fx:id="cmbFormaPago" layoutX="520.0" layoutY="365.0" prefWidth="140.0" />
+
+      <Label layoutX="20.0" layoutY="410.0" text="Monto percibido: $" />
+      <TextField fx:id="txtMontoPercibido" layoutX="170.0" layoutY="405.0" prefWidth="120.0" />
+
+      <Label layoutX="310.0" layoutY="410.0" text="Motivo no entrega:" />
+      <TextField fx:id="txtMotivoNoEntrega" layoutX="430.0" layoutY="405.0" prefWidth="230.0" />
+
+      <Label layoutX="20.0" layoutY="445.0" text="Observaciones:" />
+      <TextArea fx:id="txtObservaciones" layoutX="20.0" layoutY="465.0" prefWidth="640.0" prefHeight="90.0" />
+
+      <Button fx:id="btnCerrar" layoutX="480.0" layoutY="600.0" mnemonicParsing="false" onAction="#cerrarVentana" text="Cerrar" />
+      <Button fx:id="btnRendir" layoutX="550.0" layoutY="600.0" mnemonicParsing="false" onAction="#registrarRendicion" text="Registrar Rendicion" />
+
+      <ProgressBar fx:id="progress" layoutX="17.0" layoutY="605.0" prefHeight="15.0" prefWidth="91.0" />
+   </children>
+</AnchorPane>
