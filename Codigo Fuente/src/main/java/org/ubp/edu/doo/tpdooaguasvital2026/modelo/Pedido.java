@@ -49,7 +49,12 @@ public class Pedido extends Modelo {
     }
 
     public boolean guardar() {
-        return this.dao.insertar(toPedidoDto());
+        PedidoDto dto = toPedidoDto();
+        boolean ok = this.dao.insertar(dto);
+        if (ok && dto.getNroPedido() > 0) {
+            this.nroPedido = dto.getNroPedido();
+        }
+        return ok;
     }
 
     public boolean modificar() {

@@ -260,6 +260,7 @@ public class PedidoDao implements Dao<PedidoDto> {
             while (rs.next()) {
                 nroPedidoUltimo = rs.getInt(1);
             }
+            dto.setNroPedido(nroPedidoUltimo);
 
             for (DetallePedidoDto detalle : dto.getDetalles()) {
                 sql = "insert into detallePedido (nroPedido, codProducto, precio, cantidad) "
